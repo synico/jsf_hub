@@ -11,7 +11,7 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
+      <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -25,12 +25,12 @@
         <artifactId>myfaces-impl</artifactId>
         <version>2.2.12</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
         <groupId>javax.faces</groupId>
         <artifactId>javax.faces-api</artifactId>
         <version>2.2</version>
         <scope>provided</scope>
-    </dependency>
+    </dependency> -->
     <dependency>
       <groupId>org.primefaces</groupId>
       <artifactId>primefaces</artifactId>
@@ -49,7 +49,7 @@
         <plugin>
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
-          <version>2.0</version>
+          <version>2.2</version>
           <configuration>
             <port>9090</port>
             <path>/jsf_demo</path>

@@ -2,8 +2,12 @@ package com.nick.mbean;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+@ManagedBean(name="someBean")
 public class SomeBean {
+
+    public SomeBean() {
+        System.err.println("constructor of SomeBean......");
+    }
     
     private String someProperties = "Blah, blah";
     
