@@ -57,6 +57,19 @@
             <server>tomcat7</server>
           </configuration>
         </plugin>
+        <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.4.11.v20180605</version>
+            <configuration>
+                <httpConnector>
+                    <port>9080</port>
+                </httpConnector>
+                <webApp>
+                    <contextPath>/jsf_demo</contextPath>
+                </webApp>
+            </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
