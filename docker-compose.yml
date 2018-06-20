@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.4.18
+    restart: always
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ge_apm:/var/lib/postgresql/data
+    
+volumes:
+  ge_apm:
