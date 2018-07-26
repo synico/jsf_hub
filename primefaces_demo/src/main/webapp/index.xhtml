@@ -8,8 +8,12 @@ xmlns:p="http://primefaces.org/ui">
 <div align="center">
     <fieldset>
         <legend>JSF Test Form</legend>
-        <h:form>Some random data: <h:inputText value="#{someBean.someProperty}"/>
-            <h:commandButton value="Go to Page Accordion Panel" action="#{someBean.someActionControllerMethod}"/>
+        <h:form>
+            Some random data:
+            <h:inputText value="#{someBean.someProperty}"/><br/>
+            Request qty:
+            <p:inputNumber value="#{someBean.reqQty}" decimalPlaces="0" required="true" requiredMessage="xxxx" minValue="0" maxValue="2"/>
+            <h:commandButton value="Go to Page Accordion Panel" actionListener="#{someBean.someActionControllerMethod()}"/>
         </h:form>
     </fieldset>
 </div>

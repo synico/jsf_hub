@@ -54,6 +54,27 @@
                     <server>tomcat7</server>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.11.v20180605</version>
+                <configuration>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                    <webAppConfig>
+                        <contextPath>/pf_demo</contextPath>
+                    </webAppConfig>
+                    <httpConnector>
+                        <port>9080</port>
+                    </httpConnector>
+                    <requestLog implementation="org.eclipse.jetty.server.NCSARequestLog">
+                        <filename>${project.build.directory}/jetty-yyyy_mm_dd-request.log</filename>
+                        <retainDays>3</retainDays>
+                        <append>true</append>
+                        <extended>false</extended>
+                        <logTimeZone>GMT+8:00</logTimeZone>
+                    </requestLog>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
