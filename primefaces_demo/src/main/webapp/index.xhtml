@@ -14,6 +14,7 @@ xmlns:p="http://primefaces.org/ui">
             Request qty:
             <p:inputNumber value="#{someBean.reqQty}" decimalPlaces="0" required="true" requiredMessage="xxxx" minValue="0" maxValue="2"/>
             <h:commandButton value="Go to Page Accordion Panel" actionListener="#{someBean.someActionControllerMethod()}"/>
+            <h:commandButton value="load data" actionListener="#{dataLoadController.load()}"/>
         </h:form>
     </fieldset>
 </div>

@@ -22,11 +22,11 @@ public class SomeBean {
     }
     
     public String someActionControllerMethod() {
-        return "accordion_panel";
+        return "accordion_panel.xhtml";
     }
     
     public String someOtherActionControllerMethod() {
-        return "index";
+        return "accordion_panel.xhtml";
     }
 
 }

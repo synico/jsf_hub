@@ -30,7 +30,7 @@ public class SomeBean {
     }
     
     public String someOtherActionControllerMethod() {
-        return "index";
+        return "accordion_panel";
     }
 
 }
