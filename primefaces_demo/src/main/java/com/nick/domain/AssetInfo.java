@@ -1,16 +1,16 @@
 package com.nick.domain;
 
+import com.nick.domain.com.nick.domain.SharedAssetReqDetail;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "asset_info")
 @Getter
-public class AssetInfo {
+public class AssetInfo implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -25,8 +25,15 @@ public class AssetInfo {
     @Column(name = "depart_num")
     private String departNum;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "asset_info_id", referencedColumnName = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    private Set<SharedAssetReqDetail> sharedAssetReqDetailSet;
+
     public String toString() {
-        return "uid: " + uid + ", name: " + name + ", departNum: " + departNum;
+        sharedAssetReqDetailSet.forEach(System.out::println);
+        return "uid: " + uid
+                + ", name: " + name
+                + ", departNum: " + departNum;
     }
 
 }

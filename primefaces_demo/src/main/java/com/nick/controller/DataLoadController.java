@@ -10,6 +10,7 @@ import org.springframework.web.jsf.FacesContextUtils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import java.util.Iterator;
 import java.util.List;
 
 @ManagedBean
@@ -25,8 +26,12 @@ public class DataLoadController {
         ApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
 
         assetInfoRepository = (AssetInfoRepository) ctx.getBean("assetInfoRepository");
-        List<AssetInfo> assets = assetInfoRepository.findByName("test3");
-        log.info("size: " + assets.size());
+        List<AssetInfo> assets = assetInfoRepository.findByName("资产18080202");
+        log.info("size: " + assets);
+//        Iterator<AssetInfo> iter = assetInfoRepository.findAll().iterator();
+//        while(iter.hasNext()) {
+//            AssetInfo info = iter.next();
+//            log.info(info);
+//        }
     }
-
 }
