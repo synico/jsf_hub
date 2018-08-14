@@ -1,4 +1,4 @@
-package com.nick.domain.com.nick.domain;
+package com.nick.domain;
 
 import lombok.Getter;
 

@@ -1,7 +1,8 @@
 package com.nick.domain;
 
-import com.nick.domain.com.nick.domain.SharedAssetReqDetail;
 import lombok.Getter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,8 +27,17 @@ public class AssetInfo implements Serializable {
     private String departNum;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Fetch(value = FetchMode.SELECT)
     @JoinColumn(name = "asset_info_id", referencedColumnName = "uid", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Set<SharedAssetReqDetail> sharedAssetReqDetailSet;
+
+    public Set<SharedAssetReqDetail> getSharedAssetReqDetailSet() {
+        return sharedAssetReqDetailSet;
+    }
+
+    public void setSharedAssetReqDetailSet(Set<SharedAssetReqDetail> sharedAssetReqDetailSet) {
+        this.sharedAssetReqDetailSet = sharedAssetReqDetailSet;
+    }
 
     public String toString() {
         sharedAssetReqDetailSet.forEach(System.out::println);
