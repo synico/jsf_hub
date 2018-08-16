@@ -9,6 +9,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -40,6 +41,9 @@ public class Attribute implements Serializable {
     @LastModifiedDate
     @Column(name = "update_date")
     private Date updateDate;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "attributeUid")
+    private Set<AttrDesc> attrDescSet;
 
     public Attribute() {
     }
@@ -117,4 +121,11 @@ public class Attribute implements Serializable {
         this.updateDate = updateDate;
     }
 
+    public Set<AttrDesc> getAttrDescSet() {
+        return attrDescSet;
+    }
+
+    public void setAttrDescSet(Set<AttrDesc> attrDescSet) {
+        this.attrDescSet = attrDescSet;
+    }
 }

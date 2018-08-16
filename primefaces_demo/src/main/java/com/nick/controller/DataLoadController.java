@@ -1,6 +1,7 @@
 package com.nick.controller;
 
 import com.nick.domain.AssetInfo;
+import com.nick.domain.AttrDesc;
 import com.nick.domain.Attribute;
 import com.nick.domain.SharedAssetReqDetail;
 import com.nick.repository.AssetInfoRepository;
@@ -13,6 +14,7 @@ import org.springframework.web.jsf.FacesContextUtils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -48,11 +50,17 @@ public class DataLoadController {
 //            AssetInfo info = iter.next();
 //            log.info(info);
 //        }
-        loadAttributeList();
+        createAttr();
     }
 
     public void createAttr() {
-        Attribute attr = new Attribute("压抑配件", "nick", "nick");
+        Attribute attr = new Attribute("牙医配件", "nick", "nick");
+        Set<AttrDesc> descSet = new HashSet<AttrDesc>();
+        AttrDesc desc1 = new AttrDesc(attr.getAttributeUid(), "属性1", true);
+        AttrDesc desc2 = new AttrDesc(attr.getAttributeUid(), "属性2", false);
+        descSet.add(desc1);
+        descSet.add(desc2);
+        attr.setAttrDescSet(descSet);
         attributeRepository.save(attr);
     }
 

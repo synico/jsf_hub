@@ -27,8 +27,7 @@ public class AttrDesc implements Serializable {
     @Column(name = "required", nullable = false)
     private Boolean required;
 
-    public AttrDesc(String attrDescUid, String attributeUid, String name, Boolean required) {
-        this.attrDescUid = attrDescUid;
+    public AttrDesc(String attributeUid, String name, Boolean required) {
         this.attributeUid = attributeUid;
         this.name = name;
         this.required = required;
