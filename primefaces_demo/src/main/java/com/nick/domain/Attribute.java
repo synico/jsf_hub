@@ -1,5 +1,6 @@
 package com.nick.domain;
 
+import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -12,6 +13,7 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
+@Data
 @Entity
 @Table(name = "attribute")
 public class Attribute implements Serializable {
@@ -65,67 +67,4 @@ public class Attribute implements Serializable {
         updateDate = new Date();
     }
 
-    public String getAttributeUid() {
-        return attributeUid;
-    }
-
-    public void setAttributeUid(String attributeUid) {
-        this.attributeUid = attributeUid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public Set<AttrDesc> getAttrDescSet() {
-        return attrDescSet;
-    }
-
-    public void setAttrDescSet(Set<AttrDesc> attrDescSet) {
-        this.attrDescSet = attrDescSet;
-    }
 }

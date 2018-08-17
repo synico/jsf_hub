@@ -19,7 +19,7 @@
           p:poolPreparedStatements="true"
           p:validationQuery="select 1">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:54322/ge_apm"/>
+        <property name="url" value="jdbc:postgresql://localhost:54321/ge_apm"/>
         <property name="username" value="postgres"/>
         <property name="password" value="root"/>
     </bean>
@@ -43,6 +43,7 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.generate_statistics">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>
