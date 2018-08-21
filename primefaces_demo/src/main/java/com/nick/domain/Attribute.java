@@ -2,6 +2,7 @@ package com.nick.domain;
 
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -10,8 +11,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 @Data
 @Entity
@@ -19,52 +20,49 @@ import java.util.UUID;
 public class Attribute implements Serializable {
 
     @Id
-    @Column(name = "attribute_uid", nullable = false)
-    private String attributeUid;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    @Column(name="id", columnDefinition = "CHAR(32)")
+    private String id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", columnDefinition = "VARCHAR(64)", nullable = false)
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "VARCHAR(255)")
     private String description;
 
+    @Column(name = "tenant_uid", columnDefinition = "CHAR(32)", nullable = false)
+    private String tenantUid;
+
+    @Column(name = "institution_uid", columnDefinition = "CHAR(32)", nullable = false)
+    private String institutionUid;
+
+    @Column(name = "hospital_uid", columnDefinition = "CHAR(32)", nullable = false)
+    private String hospitalUid;
+
+    @Column(name = "site_uid", columnDefinition = "CHAR(32)", nullable = false)
+    private String siteUid;
+
     @CreatedBy
-    @Column(name = "create_by", nullable = false)
-    private String createBy;
+    @Column(name = "created_by", columnDefinition = "CHAR(32)", nullable = false)
+    private String createdBy;
 
     @CreatedDate
-    @Column(name = "create_date")
-    private Date createDate;
+    @Column(name = "created_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
     @LastModifiedBy
-    @Column(name = "update_by", nullable = false)
-    private String updateBy;
+    @Column(name = "last_modified_by", columnDefinition = "CHAR(32)", nullable = false)
+    private String lastModifiedBy;
 
     @LastModifiedDate
-    @Column(name = "update_date")
-    private Date updateDate;
+    @Column(name = "last_modified_date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "attributeUid")
-    private Set<AttrDesc> attrDescSet;
-
-    public Attribute() {
-    }
-
-    public Attribute(String name, String createBy, String updateBy) {
-        this.name = name;
-        this.createBy = createBy;
-        this.updateBy = updateBy;
-    }
-
-    @PrePersist
-    public void prePersistAction() {
-        if(StringUtils.isBlank(this.attributeUid)) {
-            this.attributeUid = UUID.randomUUID().toString().replaceAll("-", "");
-        }
-        if(createDate == null) {
-            createDate = new Date();
-        }
-        updateDate = new Date();
-    }
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "attribute_id", referencedColumnName = "id", insertable = false, updatable = false)
+    private Set<AttrDesc> attrDescSet = new HashSet<AttrDesc>();
 
 }
