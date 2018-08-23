@@ -1,6 +1,6 @@
 package com.nick.domain;
 
-import lombok.Getter;
+import lombok.Data;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "asset_info")
-@Getter
+@Data
 public class AssetInfo implements Serializable {
 
     @Id
