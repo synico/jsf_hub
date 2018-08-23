@@ -38,7 +38,7 @@ public class AssetInfo implements Serializable {
 
     private AssetInfo() {}
 
-    public AssetInfo(Integer id, String uid, String name, String departNum) {
+    public AssetInfo(Long id, String uid, String name, String departNum) {
         this.id = id;
         this.uid = uid;
         this.name = name;
