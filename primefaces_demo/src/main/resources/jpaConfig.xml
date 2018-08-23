@@ -40,11 +40,17 @@
                 <prop key="hibernate.jdbc.use_streams_for_binary">true</prop>
                 <prop key="hibernate.jdbc.fetch_size">300</prop>
 
-                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.generate_statistics">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
+        </property>
+    </bean>
+
+    <bean id="openEntityManagerInViewInterceptor" class="org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor">
+        <property name="entityManagerFactory">
+            <ref bean="entityManagerFactory"/>
         </property>
     </bean>
 

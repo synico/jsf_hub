@@ -3,15 +3,20 @@ package com.nick.controller;
 import com.nick.domain.AssetInfo;
 import com.nick.domain.Attribute;
 import com.nick.domain.SharedAssetReqDetail;
+import com.nick.domain.SharedAssetType;
 import com.nick.repository.AssetInfoRepository;
 import com.nick.repository.AttributeRepository;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.jsf.FacesContextUtils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -23,6 +28,16 @@ public class DataLoadController {
     private AssetInfoRepository assetInfoRepository;
 
     private AttributeRepository attributeRepository;
+
+    private Specification<AssetInfo> specification = new Specification<AssetInfo>() {
+        @Override
+        public Predicate toPredicate(Root<AssetInfo> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+            List<Predicate> list = new ArrayList<>();
+//            Join<AssetInfo, SharedAssetType> join = root.join();
+            Predicate[] p = new Predicate[list.size()];
+            return cb.and(list.toArray(p));
+        }
+    };
 
     private void init() {
         ApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
@@ -41,13 +56,14 @@ public class DataLoadController {
                 System.out.println(ai);
             }
         }
+        List<AssetInfo> list = assetInfoRepository.findBySwapName("4111");
 //        Iterator<AssetInfo> iter = assetInfoRepository.findAll().iterator();
 //        while(iter.hasNext()) {
 //            AssetInfo info = iter.next();
 //            log.info(info);
 //        }
 //        createAttr();
-        loadAttributesByDesc();
+//        loadAttributesByDesc();
     }
 
     public void createAttr() {

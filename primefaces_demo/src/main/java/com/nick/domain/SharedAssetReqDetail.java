@@ -1,6 +1,6 @@
 package com.nick.domain;
 
-import lombok.Getter;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "shared_asset_req_detail")
-@Getter
+@Data
 public class SharedAssetReqDetail {
 
     @Id
