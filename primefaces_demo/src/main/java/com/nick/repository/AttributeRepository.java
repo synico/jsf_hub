@@ -10,6 +10,8 @@ public interface AttributeRepository extends JpaRepository<Attribute, String> {
 
     List<Attribute> findByName(String name);
 
+    List<Attribute> findByNameContaining(String name);
+
     @Query("select a from Attribute a join a.attrDescSet attrDesc where attrDesc.name like %?1%")
     List<Attribute> findByAttrDesc(String descName);
 

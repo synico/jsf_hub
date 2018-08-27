@@ -3,7 +3,6 @@ package com.nick.controller;
 import com.nick.domain.AssetInfo;
 import com.nick.domain.Attribute;
 import com.nick.domain.SharedAssetReqDetail;
-import com.nick.domain.SharedAssetType;
 import com.nick.repository.AssetInfoRepository;
 import com.nick.repository.AttributeRepository;
 import org.apache.commons.logging.Log;
@@ -14,13 +13,17 @@ import org.springframework.web.jsf.FacesContextUtils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @ManagedBean
+//@EnableJpaAuditing
 public class DataLoadController {
 
     private Log log = LogFactory.getLog(DataLoadController.class);
@@ -48,6 +51,13 @@ public class DataLoadController {
     public void load() {
         log.info("load...");
         init();
+//        loadAssets();
+//        createAttr();
+        loadAttributes();
+//        loadAttributesByDesc();
+    }
+
+    public void loadAssets() {
         List<AssetInfo> assets = assetInfoRepository.findByName("资产18080202");
         log.info("size: " + assets.size());
         for(AssetInfo ai : assets) {
@@ -62,19 +72,31 @@ public class DataLoadController {
 //            AssetInfo info = iter.next();
 //            log.info(info);
 //        }
-//        createAttr();
-//        loadAttributesByDesc();
     }
 
     public void createAttr() {
-//        Attribute attr = new Attribute("牙医配件", "nick", "nick");
-//        Set<AttrDesc> descSet = new HashSet<AttrDesc>();
-//        AttrDesc desc1 = new AttrDesc(attr.getAttributeUid(), "属性1", true);
-//        AttrDesc desc2 = new AttrDesc(attr.getAttributeUid(), "属性2", false);
-//        descSet.add(desc1);
-//        descSet.add(desc2);
-//        attr.setAttrDescSet(descSet);
-//        attributeRepository.save(attr);
+        Attribute attr = new Attribute();
+        attr.setName("牙医附件");
+        attr.setTenantUid("0");
+        attr.setInstitutionUid("0");
+        attr.setHospitalUid("0");
+        attr.setSiteUid("0");
+        attr.setCreatedBy("nick");
+        attr.setCreatedDate(new Date());
+        attr.setLastModifiedBy("nick");
+        attr.setLastModifiedDate(new Date());
+        attributeRepository.save(attr);
+    }
+
+    public void loadAttributes() {
+        List<Attribute> attrList = attributeRepository.findByNameContaining("属性");
+        for(Attribute attr : attrList) {
+            log.info("Attribute: name: " + attr.getName() + ", lenOfName: " + attr.getNameLen());
+            attr.setDescription(attr.getDescription() + "1");
+            attributeRepository.save(attr);
+            log.info("lastUpdatedDate: " + attr.getLastModifiedDate());
+            log.info("------------------------------------------");
+        }
     }
 
     public void loadAttributeList() {

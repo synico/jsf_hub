@@ -1,0 +1,61 @@
+UPDATE PressCtrlH SET uid='f0eb6c69c6d5460bb1830fc4622fd656',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='ad5fc86229524399954cff3c6e0816d0',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec',asset_dept_uid='0eb3db6957874b98bd0358e67d448cdb' WHERE
+UPDATE PressCtrlH SET uid='44242e6de9d34ebb941f0af848cce90f',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec',asset_dept_uid='0eb3db6957874b98bd0358e67d448cdb' WHERE
+UPDATE PressCtrlH SET uid='07907f940b6246458985bf5795004fbb',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec',asset_dept_uid='157682ee582e4a36ad6204580eb134b7' WHERE
+UPDATE PressCtrlH SET uid='ea58b79d032f4e87b9583f00f3a421a9',clinical_dept_uid='4bda9925433541fd8cef93538be1eaa0',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='16c73b8cb5fb4626bf2740b788e1e10a',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='38c44f1ba2d3441da76a1319d3800ef3',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='8702845b60af4d77b601fa26c8ed67ae',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='1a1b4752dd224d21ac9c52f506aeb738',clinical_dept_uid='ea7dc49f520e4a60b8380792a317a7e2',asset_dept_uid='b54d26713c1644afb06a24f138bd5fba' WHERE
+UPDATE PressCtrlH SET uid='83ad05fa71fd44dcb48367984b562dca',clinical_dept_uid='9850f9a8f15342d9b38638a2a4432a4c',asset_dept_uid='168113a3eca74b2885124b47e65e1a52' WHERE
+UPDATE PressCtrlH SET uid='0355df767ffd4244aff1a4505040dd59',clinical_dept_uid='9850f9a8f15342d9b38638a2a4432a4c',asset_dept_uid='168113a3eca74b2885124b47e65e1a52' WHERE
+UPDATE PressCtrlH SET uid='e538d473ba6e48819c0479e71e80f3ac',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec',asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00' WHERE
+UPDATE PressCtrlH SET uid='03a53245e6f1477b95a776797f364d5e',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='86dd1da58bf54b24b8ce25f37336ce80',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='afa3bc5fb2ac48c99482b673d9492832',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='b808f81205aa417b86b2e2ec1ee70514',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='1323dde3a71a42288aa190ca6d1855aa',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='9ae5c03a34f84d749a4b1135d7986e2a',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='cb3c9a4681174b718b272cd3de888454',clinical_dept_uid='af5f168dbc3943328655d3821e0f61f6',asset_dept_uid='1b8145896923434e813566a864aec503' WHERE
+UPDATE PressCtrlH SET uid='5797d7804ceb4646a29bfc665657c6db',clinical_dept_uid='f64de8150eeb4d1ca935e166b348b3b4',asset_dept_uid='64df36fd47744e37b9a69349f54971d5' WHERE
+UPDATE PressCtrlH SET uid='a4ebfd02258a4dd9a8b4ad0fc986759d',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='4278868f498e4b599900145eaffe137a',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='1a515da6e7f8479a94612f721271e3f3',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='41a983cb92034fc3bf618ff69dbfff22',clinical_dept_uid='4bda9925433541fd8cef93538be1eaa0',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='c1570519d9354f7b8c96a4c8d3b5c34d',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='733a23d0c39d4ca1a76f4fd0acbf2672',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='d313dfec672f40eb9d1fd73cf3e56d9a',clinical_dept_uid='4bda9925433541fd8cef93538be1eaa0',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+UPDATE PressCtrlH SET uid='4dcbf00b2ed94bdeab9ca63d4ed05da0',clinical_dept_uid='4bda9925433541fd8cef93538be1eaa0',asset_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE
+
+
+--------------------------
+
+
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='f0eb6c69c6d5460bb1830fc4622fd656';
+UPDATE asset_info set asset_dept_uid='053ba5664d9848d1822e84a7929c66ec',clinical_dept_uid='0eb3db6957874b98bd0358e67d448cdb' WHERE uid='ad5fc86229524399954cff3c6e0816d0';
+UPDATE asset_info set asset_dept_uid='053ba5664d9848d1822e84a7929c66ec',clinical_dept_uid='0eb3db6957874b98bd0358e67d448cdb' WHERE uid='44242e6de9d34ebb941f0af848cce90f';
+UPDATE asset_info set asset_dept_uid='053ba5664d9848d1822e84a7929c66ec',clinical_dept_uid='157682ee582e4a36ad6204580eb134b7' WHERE uid='07907f940b6246458985bf5795004fbb';
+UPDATE asset_info set asset_dept_uid='4bda9925433541fd8cef93538be1eaa0',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='ea58b79d032f4e87b9583f00f3a421a9';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='16c73b8cb5fb4626bf2740b788e1e10a';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='38c44f1ba2d3441da76a1319d3800ef3';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='8702845b60af4d77b601fa26c8ed67ae';
+UPDATE asset_info set asset_dept_uid='ea7dc49f520e4a60b8380792a317a7e2',clinical_dept_uid='b54d26713c1644afb06a24f138bd5fba' WHERE uid='1a1b4752dd224d21ac9c52f506aeb738';
+UPDATE asset_info set asset_dept_uid='9850f9a8f15342d9b38638a2a4432a4c',clinical_dept_uid='168113a3eca74b2885124b47e65e1a52' WHERE uid='83ad05fa71fd44dcb48367984b562dca';
+UPDATE asset_info set asset_dept_uid='9850f9a8f15342d9b38638a2a4432a4c',clinical_dept_uid='168113a3eca74b2885124b47e65e1a52' WHERE uid='0355df767ffd4244aff1a4505040dd59';
+UPDATE asset_info set asset_dept_uid='053ba5664d9848d1822e84a7929c66ec',clinical_dept_uid='715b5347fa8a4201875d40eb3d6acd00' WHERE uid='e538d473ba6e48819c0479e71e80f3ac';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='03a53245e6f1477b95a776797f364d5e';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='86dd1da58bf54b24b8ce25f37336ce80';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='afa3bc5fb2ac48c99482b673d9492832';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='b808f81205aa417b86b2e2ec1ee70514';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='1323dde3a71a42288aa190ca6d1855aa';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='9ae5c03a34f84d749a4b1135d7986e2a';
+UPDATE asset_info set asset_dept_uid='af5f168dbc3943328655d3821e0f61f6',clinical_dept_uid='1b8145896923434e813566a864aec503' WHERE uid='cb3c9a4681174b718b272cd3de888454';
+UPDATE asset_info set asset_dept_uid='f64de8150eeb4d1ca935e166b348b3b4',clinical_dept_uid='64df36fd47744e37b9a69349f54971d5' WHERE uid='5797d7804ceb4646a29bfc665657c6db';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='a4ebfd02258a4dd9a8b4ad0fc986759d';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='4278868f498e4b599900145eaffe137a';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='1a515da6e7f8479a94612f721271e3f3';
+UPDATE asset_info set asset_dept_uid='4bda9925433541fd8cef93538be1eaa0',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='41a983cb92034fc3bf618ff69dbfff22';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='c1570519d9354f7b8c96a4c8d3b5c34d';
+UPDATE asset_info set asset_dept_uid='715b5347fa8a4201875d40eb3d6acd00',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='733a23d0c39d4ca1a76f4fd0acbf2672';
+UPDATE asset_info set asset_dept_uid='4bda9925433541fd8cef93538be1eaa0',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='d313dfec672f40eb9d1fd73cf3e56d9a';
+UPDATE asset_info set asset_dept_uid='4bda9925433541fd8cef93538be1eaa0',clinical_dept_uid='053ba5664d9848d1822e84a7929c66ec' WHERE uid='4dcbf00b2ed94bdeab9ca63d4ed05da0';

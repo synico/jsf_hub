@@ -1,7 +1,9 @@
 package com.nick.domain;
 
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
+import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,6 +19,7 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "attribute")
+//@EntityListeners(AuditingEntityListener.class)
 public class Attribute implements Serializable {
 
     @Id
@@ -31,16 +34,16 @@ public class Attribute implements Serializable {
     @Column(name = "description", columnDefinition = "VARCHAR(255)")
     private String description;
 
-    @Column(name = "tenant_uid", columnDefinition = "CHAR(32)", nullable = false)
+    @Column(name = "tenant_uid", columnDefinition = "CHAR(32)")
     private String tenantUid;
 
-    @Column(name = "institution_uid", columnDefinition = "CHAR(32)", nullable = false)
+    @Column(name = "institution_uid", columnDefinition = "CHAR(32)")
     private String institutionUid;
 
-    @Column(name = "hospital_uid", columnDefinition = "CHAR(32)", nullable = false)
+    @Column(name = "hospital_uid", columnDefinition = "CHAR(32)")
     private String hospitalUid;
 
-    @Column(name = "site_uid", columnDefinition = "CHAR(32)", nullable = false)
+    @Column(name = "site_uid", columnDefinition = "CHAR(32)")
     private String siteUid;
 
     @CreatedBy
@@ -56,13 +59,17 @@ public class Attribute implements Serializable {
     @Column(name = "last_modified_by", columnDefinition = "CHAR(32)", nullable = false)
     private String lastModifiedBy;
 
-    @LastModifiedDate
-    @Column(name = "last_modified_date", nullable = false)
+//    @LastModifiedDate
+    @Column(name = "last_modified_date", nullable = false, insertable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @Generated(GenerationTime.ALWAYS)
     private Date lastModifiedDate;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "attribute_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Set<AttrDesc> attrDescSet = new HashSet<AttrDesc>();
+
+    @Formula("(select length(a.name) from attribute a where a.id = id)")
+    private String nameLen;
 
 }
