@@ -7,13 +7,13 @@ import javax.validation.constraints.NotNull;
 
 @Embeddable
 @Data
-@Entity
 @Table(name = "hia_address")
 public class Address {
 
-    @Id
-    @GeneratedValue(generator = "ID_GENERATOR")
-    protected Long id;
+//    @Id
+//    @Column(name = "address_id")
+//    @GeneratedValue(generator = "ID_GENERATOR")
+//    protected Long addressId;
 
     @NotNull
     @Column(name = "street", nullable = false)
