@@ -7,13 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Embeddable
 @Data
-@Table(name = "hia_address")
 public class Address {
-
-//    @Id
-//    @Column(name = "address_id")
-//    @GeneratedValue(generator = "ID_GENERATOR")
-//    protected Long addressId;
 
     @NotNull
     @Column(name = "street", nullable = false)
@@ -35,4 +29,5 @@ public class Address {
         this.zipcode = zipcode;
         this.city = city;
     }
+
 }

@@ -3,8 +3,12 @@ package com.nick.controller;
 import com.nick.domain.AssetInfo;
 import com.nick.domain.Attribute;
 import com.nick.domain.SharedAssetReqDetail;
+import com.nick.domain.chapter5.Address;
+import com.nick.domain.chapter5.User;
 import com.nick.repository.AssetInfoRepository;
 import com.nick.repository.AttributeRepository;
+import com.nick.repository.UserRepository;
+import com.nick.service.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
@@ -32,6 +36,10 @@ public class DataLoadController {
 
     private AttributeRepository attributeRepository;
 
+    private UserRepository userRepository;
+
+    private UserService userService;
+
     private Specification<AssetInfo> specification = new Specification<AssetInfo>() {
         @Override
         public Predicate toPredicate(Root<AssetInfo> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -46,15 +54,18 @@ public class DataLoadController {
         ApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
         assetInfoRepository = (AssetInfoRepository) ctx.getBean("assetInfoRepository");
         attributeRepository = (AttributeRepository) ctx.getBean("attributeRepository");
+        userRepository = (UserRepository) ctx.getBean("userRepository");
+//        userService = (UserService) ctx.getBean("userService");
     }
 
     public void load() {
         log.info("load...");
         init();
-//        loadAssets();
+        loadAssets();
 //        createAttr();
-        loadAttributes();
+//        loadAttributes();
 //        loadAttributesByDesc();
+//        saveUser();
     }
 
     public void loadAssets() {
@@ -67,11 +78,9 @@ public class DataLoadController {
             }
         }
         List<AssetInfo> list = assetInfoRepository.findBySwapName("4111");
-//        Iterator<AssetInfo> iter = assetInfoRepository.findAll().iterator();
-//        while(iter.hasNext()) {
-//            AssetInfo info = iter.next();
-//            log.info(info);
-//        }
+        for(AssetInfo ai : list) {
+            log.info(ai.toString());
+        }
     }
 
     public void createAttr() {
@@ -106,7 +115,18 @@ public class DataLoadController {
 
     public void loadAttributesByDesc() {
         List<Attribute> attributes = attributeRepository.findByAttrDesc("1");
-        attributes.stream().forEach(System.out::println);
+        attributes.stream().map(item -> item.getName()).forEach(System.out::println);
         log.info("size of attribute: " + attributes.size());
+    }
+
+    public void saveUser() {
+        User a = new User();
+        a.setFirstName("Nick");
+        a.setLastName("Liu");
+
+        Address addr = new Address("st", "85034", "sh");
+        a.setHomeAddress(addr);
+
+        userRepository.save(a);
     }
 }

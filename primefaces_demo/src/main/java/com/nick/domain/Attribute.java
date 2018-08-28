@@ -65,7 +65,7 @@ public class Attribute implements Serializable {
     @Generated(GenerationTime.ALWAYS)
     private Date lastModifiedDate;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "attribute_id", referencedColumnName = "id", insertable = false, updatable = false)
     private Set<AttrDesc> attrDescSet = new HashSet<AttrDesc>();
 
