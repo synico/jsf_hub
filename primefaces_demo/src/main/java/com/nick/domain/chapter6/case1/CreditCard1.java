@@ -1,17 +1,18 @@
-package com.nick.domain.chapter6;
+package com.nick.domain.chapter6.case1;
 
-import org.springframework.stereotype.Component;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@Data
 @Entity
-@Table(name = "credit_card")
+@Table(name = "credit_card_c1")
 @AttributeOverride(
     name = "owner",
     column = @Column(name = "cc_owner", nullable = false)
 )
-public class CreditCard extends BillingDetails {
+public class CreditCard1 extends BillingDetails1 {
 
     @Id
     @GeneratedValue(generator = "ID_GENERATOR")

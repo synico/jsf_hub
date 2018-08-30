@@ -3,11 +3,10 @@ package com.nick.controller;
 import com.nick.domain.AssetInfo;
 import com.nick.domain.Attribute;
 import com.nick.domain.SharedAssetReqDetail;
-import com.nick.domain.chapter5.Address;
-import com.nick.domain.chapter5.User;
 import com.nick.repository.AssetInfoRepository;
 import com.nick.repository.AttributeRepository;
 import com.nick.repository.UserRepository;
+import com.nick.service.MappingInheritanceServce;
 import com.nick.service.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -40,6 +39,8 @@ public class DataLoadController {
 
     private UserService userService;
 
+    private MappingInheritanceServce mappingInheritanceServce;
+
     private Specification<AssetInfo> specification = new Specification<AssetInfo>() {
         @Override
         public Predicate toPredicate(Root<AssetInfo> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -55,17 +56,18 @@ public class DataLoadController {
         assetInfoRepository = (AssetInfoRepository) ctx.getBean("assetInfoRepository");
         attributeRepository = (AttributeRepository) ctx.getBean("attributeRepository");
         userRepository = (UserRepository) ctx.getBean("userRepository");
-//        userService = (UserService) ctx.getBean("userService");
+        userService = (UserService) ctx.getBean("userService");
+        mappingInheritanceServce = (MappingInheritanceServce) ctx.getBean("mappingInheritanceServce");
     }
 
     public void load() {
         log.info("load...");
         init();
-        loadAssets();
+//        loadAssets();
 //        createAttr();
 //        loadAttributes();
 //        loadAttributesByDesc();
-//        saveUser();
+        c6cases();
     }
 
     public void loadAssets() {
@@ -119,14 +121,11 @@ public class DataLoadController {
         log.info("size of attribute: " + attributes.size());
     }
 
-    public void saveUser() {
-        User a = new User();
-        a.setFirstName("Nick");
-        a.setLastName("Liu");
-
-        Address addr = new Address("st", "85034", "sh");
-        a.setHomeAddress(addr);
-
-        userRepository.save(a);
+    public void c6cases() {
+//        for(int i = 0; i < 5; i++) {
+//            mappingInheritanceServce.c6case1(Integer.toString(i));
+//            mappingInheritanceServce.c6case2(Integer.toString(i));
+//        }
+        mappingInheritanceServce.c6case2Find();
     }
 }
