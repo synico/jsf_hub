@@ -30,7 +30,7 @@ public class Application {
         Iterator<AssetInfo> assetInfos;
         assetInfos = assetInfoRepository.findAll().iterator();
         while(assetInfos.hasNext()) {
-//            System.out.println(assetInfos.next());
+            System.out.println(assetInfos.next());
         }
     }
 }
