@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
+@Table(name = "credit_card_c5")
 @DiscriminatorValue("CC")
 @SecondaryTable(
     name = "credit_card_c5",
