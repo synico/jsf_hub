@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nick.private</groupId>
-    <artifactId>primefaces_demo</artifactId>
+    <artifactId>primefaces-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
