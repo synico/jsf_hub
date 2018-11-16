@@ -5,14 +5,14 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Data
+/*@Data
 @Entity
 @Table(name = "credit_card_c5")
 @DiscriminatorValue("CC")
 @SecondaryTable(
     name = "credit_card_c5",
     pkJoinColumns = @PrimaryKeyJoinColumn(name = "credit_card_id")
-)
+)*/
 public class CreditCard5 extends BillingDetails5 {
 
     @NotNull

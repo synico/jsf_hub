@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.annotation.PostConstruct;
+import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,13 +25,14 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) {
+//        getAnnotation(Application.class);
         SpringApplication.run(Application.class, args);
     }
 
     @Autowired
     AssetInfoRepository assetInfoRepository;
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         Iterator<AssetInfo> assetInfos;
         assetInfos = assetInfoRepository.findAll().iterator();
@@ -41,8 +43,15 @@ public class Application {
         List<AssetInfo> assetInfoList = assetInfoRepository.findByNameContaining("设备");
         System.out.println("Size: " + assetInfoList.size());
 
-        Pageable pagination = new PageRequest(2, 10);
+        Pageable pagination = PageRequest.of(2, 10);
         Page<AssetInfo> assetInfoPage = assetInfoRepository.findByNameContaining("设备", pagination);
         System.out.println(assetInfoPage.getTotalElements());
+    }
+
+    private static void getAnnotation(Class clz) {
+        for(Annotation annotation : clz.getAnnotations()) {
+            System.out.println("Annotation: " + annotation);
+            getAnnotation(annotation.annotationType());
+        }
     }
 }
